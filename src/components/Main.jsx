@@ -4,7 +4,7 @@ import TaskTemplate from './TaskTemplate'
 
 
 const Main = () => {
-  const [tasks, setTasks] = useState(["Your task's will look like this"]);
+  const [tasks, setTasks] = useState(["Your task's will look like this", "You can click the tasks to change color"]);
   const [taskDesc, setTaskDesc] = useState('');
 
   const createTask = () => {
