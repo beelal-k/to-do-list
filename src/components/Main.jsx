@@ -4,7 +4,7 @@ import TaskTemplate from './TaskTemplate'
 
 
 const Main = () => {
-  const [tasks, setTasks] = useState(['Ok']);
+  const [tasks, setTasks] = useState(["Your task's will look like this"]);
   const [taskDesc, setTaskDesc] = useState('');
 
   const createTask = () => {
@@ -21,8 +21,8 @@ const Main = () => {
           <input type="text" placeholder='Create a new task' className='search-bar' id="searchBar" onKeyDown={(e) => e.keyCode === 13 ? createTask() : null} onChange={(e) => setTaskDesc(e.target.value)} />
           {
             tasks.length <= 0 ? <p className='no-tasks'>Seem&apos;s like there&apos;s nothing to do...</p>
-            :
-            tasks.map(task => {
+              :
+              tasks.map(task => {
                 return (
                   <TaskTemplate taskDesc={task} setTasks={setTasks} />
                 )

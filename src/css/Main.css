@@ -62,5 +62,13 @@ h1::after{
         padding: 3%;
         padding-bottom: 4%;
     }
+    .search-bar{
+    padding: 4%;
+    margin-bottom: 5%;
+    }
+
+    .no-tasks{
+        padding: 4%;
+    }
     
 }
