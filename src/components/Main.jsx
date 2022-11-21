@@ -30,6 +30,11 @@ const Main = () => {
           }
 
         </div>
+        <div className='contact-section'>
+          <h2>Contact me</h2>
+          <p>Email: bilalk.dev@gmail.com</p>
+          <p>Source code: <a href='https://github.com/beelal-k/to-do-list.git'>https://github.com/beelal-k/to-do-list.git</a></p>
+        </div>
       </main>
 
 
