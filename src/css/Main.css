@@ -61,10 +61,11 @@ h1{
 
 }
 .contact-section h2{
-    margin-bottom: 2%;
+    margin-bottom: 1%;
+    font-size: 20px;
 }
 .contact-section p{
-    font-size: 18px;
+    font-size: 16px;
     letter-spacing: 1px;
     margin-bottom: 0;
     text-align: center;
@@ -91,6 +92,10 @@ h1{
 
     .no-tasks{
         padding: 4%;
+    }
+
+    .contact-section{
+        margin-top: 15%;
     }
     
 }

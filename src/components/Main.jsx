@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import '../css/Main.css'
 import TaskTemplate from './TaskTemplate'
 
@@ -7,11 +7,21 @@ const Main = () => {
   const [tasks, setTasks] = useState(["Your task's will look like this", "You can click the tasks to change color"]);
   const [taskDesc, setTaskDesc] = useState('');
 
-  const createTask = () => {
+
+  const createTask = async () => {
     setTasks(task => [...task, taskDesc]);
     document.getElementById('searchBar').value = "";
-
+    // localStorage.setItem("tasks", JSON.stringify([...tasks, taskDesc]));
   }
+
+  useEffect(() => {
+    // localStorage.setItem('tasks', tasks);
+    // let todos = JSON.parse(localStorage.getItem('tasks'));
+    // console.log(todos)
+
+
+  }, [tasks])
+
 
   return (
     <>
@@ -24,7 +34,7 @@ const Main = () => {
               :
               tasks.map(task => {
                 return (
-                  <TaskTemplate taskDesc={task} setTasks={setTasks} />
+                  <TaskTemplate taskDesc={task} setTasks={setTasks} tasks={tasks} />
                 )
               })
           }
