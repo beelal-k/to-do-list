@@ -4,17 +4,20 @@ import '../css/TaskTemplate.css'
 
 const TaskTemplate = ({ taskDesc, setTasks, tasks }) => {
 
-    const removeTask = () => {
+    const removeTask = async () => {
         setTasks(tasks => tasks.filter(task => task !== taskDesc));
         // let index = tasks.indexOf(taskDesc)
-        // setTasks(task => task.splice(index, 0));
-        // localStorage.setItem('tasks', JSON.stringify(tasks))
+        // console.log(index)
+        // setTasks(task => task.slice(index));
+        localStorage.setItem('tasks', JSON.stringify(tasks.filter(task => task !== taskDesc)))
+        let temp = localStorage.getItem('tasks')
+        console.log(temp)
     }
 
     let colorIndex = 0;
     const changeColor = () => {
         const colors = ["#7acf64", "#e74345", "#dfd762"];
-        const shadowColors = ["#5ea04d","#aa3436","#aca54a"]
+        const shadowColors = ["#5ea04d", "#aa3436", "#aca54a"]
         colorIndex += 1;
         if (!(colorIndex >= 3)) {
             document.getElementById(taskDesc + "Color").style.boxShadow = `0px 10px ${shadowColors[colorIndex]}`;

@@ -7,20 +7,18 @@ const Main = () => {
   const [tasks, setTasks] = useState(["Your task's will look like this", "You can click the tasks to change color"]);
   const [taskDesc, setTaskDesc] = useState('');
 
-
   const createTask = async () => {
     setTasks(task => [...task, taskDesc]);
     document.getElementById('searchBar').value = "";
-    // localStorage.setItem("tasks", JSON.stringify([...tasks, taskDesc]));
+    localStorage.setItem("tasks", JSON.stringify([...tasks, taskDesc]));
   }
 
   useEffect(() => {
-    // localStorage.setItem('tasks', tasks);
-    // let todos = JSON.parse(localStorage.getItem('tasks'));
-    // console.log(todos)
+    localStorage.getItem('tasks', tasks);
+    let todos = JSON.parse(localStorage.getItem('tasks'));
+    setTasks(todos);
 
-
-  }, [tasks])
+  }, [])
 
 
   return (
