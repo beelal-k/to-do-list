@@ -6,6 +6,7 @@ import TaskTemplate from './TaskTemplate'
 const Main = () => {
   const [tasks, setTasks] = useState(["Your task's will look like this", "You can click the tasks to change color"]);
   const [taskDesc, setTaskDesc] = useState('');
+  // console.log(tasks)
 
   const createTask = async () => {
     setTasks(task => [...task, taskDesc]);
@@ -15,8 +16,8 @@ const Main = () => {
 
   useEffect(() => {
     localStorage.getItem('tasks', tasks);
-    let todos = JSON.parse(localStorage.getItem('tasks'));
-    setTasks(todos);
+    // let todos = JSON.parse(localStorage.getItem('tasks'));
+    // setTasks(todos);
 
   }, [])
 
