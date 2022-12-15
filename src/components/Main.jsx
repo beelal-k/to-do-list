@@ -17,7 +17,8 @@ const Main = () => {
   useEffect(() => {
     localStorage.getItem('tasks', tasks);
     let todos = JSON.parse(localStorage.getItem('tasks'));
-    if (todos.length <= 0) {
+    if (todos === null) {
+      // todos = [];
       localStorage.setItem("tasks", JSON.stringify(tasks));
     }
     // else{
